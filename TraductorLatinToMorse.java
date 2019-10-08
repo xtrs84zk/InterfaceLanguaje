@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class TraductorLatinToMorse
 {
     //Arreglos globales donde se contiene el equivalente en cada alfabeto
-    static String[] latinAlphabet;
-    static String[] morseAlphabet;
+    private static String[] latinAlphabet;
+    private static String[] morseAlphabet;
 
     public static void main(String[] args) {
         String[] Input;
@@ -49,12 +49,12 @@ public class TraductorLatinToMorse
      */
     private static String convertirAMorse(String[] cadenaAConvertir) {
         String cadenaEnMorse = "";
-        for (int i = 0; i < cadenaAConvertir.length; i++) {
-            if (obtenerPosicionEnElAlfabeto(cadenaAConvertir[i]) < 0) {
+        for (String s : cadenaAConvertir) {
+            if (obtenerPosicionEnElAlfabeto(s) < 0) {
                 //cualquier caracter que no exista en el alfabeto, se considera un espacio
                 cadenaEnMorse += "   ";
             } else {
-                cadenaEnMorse += morseAlphabet[obtenerPosicionEnElAlfabeto(cadenaAConvertir[i])] + " ";
+                cadenaEnMorse += morseAlphabet[obtenerPosicionEnElAlfabeto(s)] + " ";
             }
         }
         return cadenaEnMorse;
