@@ -43,11 +43,6 @@ public class TraductorLatinToMorse
     /**
      * Realiza la conversión caracter por caracter
      * En caso de no encontrar una letra en el alfabeto, inserta un espacio (entre palabras)
-     * Se utilizó la siguiente explicación como gramática:
-     * La duración del punto es la mínima posible. Una raya tiene una duración de aproximadamente tres veces la del punto.
-     * Entre cada par de símbolos de una misma letra existe una ausencia de señal con duración aproximada a la de un punto.
-     * Entre las letras de una misma palabra, la ausencia es de aproximadamente tres puntos.
-     * Para la separación de palabras transmitidas el tiempo es de aproximadamente tres veces el de la raya.
      *
      * @param cadenaAConvertir que es la cadena en el alfabeto latino
      * @return cadenaEnMorse que es la cadena en alfabeto morse
@@ -84,14 +79,13 @@ public class TraductorLatinToMorse
      * Carga los lenguajes en memoria
      */
     private static void inicializarLenguajes() {
-        //El alfabeto no contiene la letra ñ > morse no la contiene
         latinAlphabet = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
-                "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x",
+                "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x",
                 "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
                 ",", ".", "?"};
 
         morseAlphabet = new String[]{".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",
-                ".---", "-.-", ".-..", "--", "-.", "---", ".---.", "--.-", ".-.",
+                ".---", "-.-", ".-..", "--", "-.", "--.--", "---", ".---.", "--.-", ".-.",
                 "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", ".----",
                 "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.",
                 "-----", "--..--", ".-.-.-", "..--.."};
