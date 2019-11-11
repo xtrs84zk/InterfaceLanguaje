@@ -11,7 +11,7 @@ public class TraductorLatinToMorse
         String entradaEnMorse;
         String entradaLatin;
         //se cargan los alfabetos soportados a la memoria
-        inicializarLenguajes();
+        //inicializarLenguajes();
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Traductor alfabeto latino a código morse.");
         System.out.print("Introduzca la frase a convertir: ");
@@ -48,8 +48,28 @@ public class TraductorLatinToMorse
      * @return cadenaEnMorse que es la cadena en alfabeto morse
      */
     private static String convertirAMorse(String[] cadenaAConvertir) {
+        inicializarLenguajes(); //carga los lenguajes al momento de ejecución
         String cadenaEnMorse = "";
         for (String s : cadenaAConvertir) {
+            if (obtenerPosicionEnElAlfabeto(s) < 0) {
+                //cualquier caracter que no exista en el alfabeto, se considera un espacio
+                cadenaEnMorse += "   ";
+            } else {
+                cadenaEnMorse += morseAlphabet[obtenerPosicionEnElAlfabeto(s)] + " ";
+            }
+        }
+        return cadenaEnMorse;
+    }
+
+    /**
+     * @param cadenaAConvertir
+     * @return
+     */
+    public static String convertirAMorseExterno(String cadenaAConvertir) {
+        inicializarLenguajes(); //carga los lenguajes al momento de ejecución
+        String[] c = separarEnLetras(cadenaAConvertir);
+        String cadenaEnMorse = "";
+        for (String s : c) {
             if (obtenerPosicionEnElAlfabeto(s) < 0) {
                 //cualquier caracter que no exista en el alfabeto, se considera un espacio
                 cadenaEnMorse += "   ";
