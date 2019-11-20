@@ -3,14 +3,22 @@ public class Compiler implements CompilerFunctions {
     @Override
     public void parseMorseCode() {
 
+        //sumar
+      // -. ..- -- . .-. ---  = ... ..- -- .- .-. ( ..... , ....- ) ;
+
+        //multiplicar
+        // -. ..- -- . .-. --- =  -- ..- .-.. - .. .---. .-.. .. -.-. .- .-.  ( ..... , ....- ) ;
+
+        //traducir
+        //- .-. .- -.. ..- -.-. .. .-.  ( .- --. ..- .- -.-. .- - . ) ;
     }
 
     @Override
     public void decir(String cosaADecir) {
-
+        System.out.println(cosaADecir);
     }
 
-    @Override
+    @Override //... ..- -- .- .-.
     public int sumar(int cosa1, int cosa2) {
         return 0;
     }
@@ -25,7 +33,7 @@ public class Compiler implements CompilerFunctions {
         return 0;
     }
 
-    @Override
+    @Override //- .-. .- -.. ..- -.-. .. .-.
     public String traducir(String traduccion) {
         return TraductorLatinToMorse.convertirAMorseExterno(traduccion);
     }

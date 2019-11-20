@@ -17,4 +17,5 @@ public interface CompilerFunctions {
     //el morse para traducir es : - .-. .- -.. ..- -.-. .. .-.
     String traducir(String traduccion);
 
+
 }
